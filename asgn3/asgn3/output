@@ -1,0 +1,58 @@
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  finder.sh tests @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+[[[[ FAIL - a3config not found ]]]]
+********************************************************************************
+./finder.sh
+Error cannot find a3config
+Script status code is == 1 ==
+********************************************************************************
+[[[[ FAIL - DIRNAME is not set ]]]]
+********************************************************************************
+./finder.sh
+Error DIRNAME and EXTENSION must be set
+Script status code is == 2 ==
+********************************************************************************
+[[[[ FAIL - EXTENSION is not set ]]]]
+********************************************************************************
+./finder.sh
+Error DIRNAME and EXTENSION must be set
+Script status code is == 2 ==
+********************************************************************************
+[[[[ FAIL - DIRNAME value not a dir ]]]]
+********************************************************************************
+./finder.sh
+Error directory /tmp/__tmp_comp206_a3_eli14/nosuchdir does not exist
+Script status code is == 3 ==
+********************************************************************************
+[[[[ WORKS - but no files with that extension ]]]]
+********************************************************************************
+./finder.sh
+Unable to locate any files with extension cfg in /tmp/__tmp_comp206_a3_eli14
+Script status code is == 0 ==
+********************************************************************************
+[[[[ WORKS - without showing contents ]]]]
+********************************************************************************
+./finder.sh
+Unable to locate any files with extension msg in /tmp/__tmp_comp206_a3_eli14
+Script status code is == 0 ==
+********************************************************************************
+[[[[ WORKS - shows contents ]]]]
+********************************************************************************
+./finder.sh
+Unable to locate any files with extension msg in /tmp/__tmp_comp206_a3_eli14
+Script status code is == 0 ==
+********************************************************************************
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  fname tests @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+[[[[ FAIL - userid is not passed ]]]]
+********************************************************************************
+fname
+Function status code is ==1==  FNAME value is ==ERROR==
+[[[[ WORKS - but user id is not found ]]]]
+********************************************************************************
+fname nouser
+Function status code is ==0==  FNAME value is ==NOTFOUND==
+[[[[ WORKS - user id is found ]]]]
+********************************************************************************
+fname eli14
+Function status code is ==0==  FNAME value is ==Er==

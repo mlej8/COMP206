@@ -1,0 +1,6 @@
+We only want to compile the pieces of our program based on the changes we made to our program.
+Notice Makefile are white space sensitive, indentation must be exactly as follows
+This says that anytime that bank.o changes we are going to recompile it into an executable named output
+
+The "clean" command doesn't depend on anything, it is simply something we can invoke from the command line.
+It will remove all the files specified

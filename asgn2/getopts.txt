@@ -1,0 +1,11 @@
+getopts
+First receives a list of single characters which represent options. If these characters are followed by a column, it is expected to be followed by an argument which is passed to the script in the $OPTARG variable.
+The second parameter is the name of a variable which will be the character of current switch. Hence, each parsed option is second argument
+
+It will stop parsing on the first non-option argument (a string that doesn't begin with a hyphen (-) that isn't an argument for any option in front of it).
+It will also stop parsing when it sees the --, which means end of options
+
+
+If the very first character of the option-string is a :, getopts switches to "silent error reporting mode".
+
+https://wiki.bash-hackers.org/howto/getopts_tutorial

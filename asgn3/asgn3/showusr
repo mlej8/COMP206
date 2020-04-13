@@ -1,0 +1,26 @@
+#Do not include a sh-bang (#!/bin/bash) in this script.
+#Do not write code outside of this function body
+function fname()
+{
+
+# If the functions is not passed an argument, set the variable FNAME to ERROR and return a value of 1
+if [ $# -eq 0 ] 
+then 
+	FNAME="ERROR"
+	return 1
+fi 
+
+# Find user among the sessions logged in 
+user=`pinky -f $1`
+
+# If the argument passed to fname cannot be found among the sessions logged in, set FNAME to NOTFOUND and return 0
+if [ -z "$user" ] || [ ! "$user" ] # if the search returns a string of length zero or the string is null
+then 
+	FNAME="NOTFOUND"
+	return 0
+else # If the userid passed as argument to fname is found among the sessions logged in it should set FNAME to the first name of that user and return 0
+	tokens=( $user ) # tokenize information returned by pinky 
+	FNAME=${tokens[1]} # set FNAME to the first token (i.e. the one after the userid which is always the first name)
+	return 0 
+fi 
+}

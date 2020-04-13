@@ -1,0 +1,53 @@
+commit ad5d564629a661095fb76838a2a8c39b1bd36b75
+Author: Er Jun LI <eli14@teaching.CS.McGill.CA>
+Date:   Mon Apr 13 00:04:56 2020 -0400
+
+    Modified integers to use int pointer and malloc in polyapp.c
+
+commit 3c0b47434e25cf85f9d2ac17fa3cc59c0d97aa58
+Author: Er Jun LI <eli14@teaching.CS.McGill.CA>
+Date:   Sun Apr 12 23:57:54 2020 -0400
+
+    Final submission version, modified Makefile and added comments in *.h files
+
+commit e34fc762e1dd7d37c67d8b505089f1cc8288b5a1
+Author: Er Jun LI <eli14@teaching.CS.McGill.CA>
+Date:   Sat Apr 11 18:17:50 2020 -0400
+
+    Modified makefile to include .h files
+
+commit decf9200419cc18bd0b289f5d25a7ffbe1ac5df7
+Author: Er Jun LI <eli14@teaching.CS.McGill.CA>
+Date:   Wed Apr 8 18:31:45 2020 -0400
+
+    Done assignment 6, added .h files and tested with mini6tester.
+
+commit 0412d60e9f90ab929832b83732cc089fd65a26eb
+Author: Er Jun LI <eli14@teaching.CS.McGill.CA>
+Date:   Wed Apr 8 11:31:28 2020 -0400
+
+    Done implemeting displayPolynomail
+
+commit c6068fbacd79a7790b6ced1e5cd8e1051e3e0e96
+Author: Er Jun LI <eli14@teaching.CS.McGill.CA>
+Date:   Wed Apr 8 00:20:41 2020 -0400
+
+    Done add poly term function
+
+commit f3bf14d4ddf304fccdc7d87c399a35662eafa9ab
+Author: Er Jun LI <eli14@teaching.CS.McGill.CA>
+Date:   Tue Apr 7 23:05:58 2020 -0400
+
+    Done parsing function
+
+commit 9041d6f0a5a6bf608eb6bfea23dba0bfe679e0bc
+Author: Er Jun LI <eli14@teaching.CS.McGill.CA>
+Date:   Tue Apr 7 19:03:05 2020 -0400
+
+    Completed reading one line at a time from the data file with fgets
+
+commit 883dfdcbcdd4067f2366be3a78ffdd57d54294ae
+Author: Er Jun LI <eli14@teaching.CS.McGill.CA>
+Date:   Tue Apr 7 18:12:57 2020 -0400
+
+    Initial commit, created files polyapp.c and polydata.csv
