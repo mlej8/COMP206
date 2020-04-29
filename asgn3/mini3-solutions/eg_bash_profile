@@ -1,0 +1,16 @@
+
+# Use the hostname command for the welcome greeting.
+echo "Welcome to "`hostname`"!"
+
+# Search for the login user's name in the output of who
+#   using grep and then count the number of output lines from grep
+echo "You have "`who | grep $LOGNAME | wc -l`" login sessions to this host."
+
+# Create an alias that makes it easy to cd to COMP206 directory.
+alias comp206='cd ~/Projects/COMP206'
+
+# Set bash prompt to include user, host, time and current dir.
+PS1='\u@\h[\t]:\w$ '
+
+# Random quote from the fortune command.
+fortune

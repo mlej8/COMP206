@@ -1,0 +1,25 @@
+#Do not include a sh-bang (#!/bin/bash) in this script.
+#Do not write code outside of this function body
+function fname()
+{
+	# Check if the user passed an input argument.
+	if [[ -z "$1" ]]
+	then
+		FNAME=ERROR
+		return 1
+	else
+		# Use pinky to find user information.
+		USRINFO=`pinky $1 -bhpf`
+		# pinky could not locate the user.
+		if [[ -z $USRINFO ]]
+		then
+			FNAME=NOTFOUND
+			return 0
+		else
+			# Find the first name from the user information reported by pinky.
+			set `echo $USRINFO`
+			FNAME=$2
+		fi
+	fi
+	return 0
+}
