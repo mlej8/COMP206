@@ -1,0 +1,27 @@
+(A) If developer 1 is editing replace.c, but developer 2 wants to edit replace.c at the same time. How can git help them do this?
+Git has a feature called branch that allows multiple developers working on the same file at the same time. 
+When branching, we first must create a new branch using git branch newBranchName. 
+This will create an exact copy of the files from the current branch into newBranchName (the new branch). 
+Therefore, we now have two independent copies. 
+The other developers can then checkout into their own branch to work on the same file at the same time using: git checkout newBranchName
+Now whatever the other developers modify in their own branch will only be reflected in their own branch. 
+Later changes from these two branches can be merged together.
+
+(B)  How can they overcome a conflict, assuming the two replace.c files have a git conflict?
+When merging, git will try to auto merge, but if there is a conflict, git will execute a diff which shows the differences in the files that have a conflict and asks the user to fix the conflict.
+After having merged the two branches together, you can resolve git conflicts using the command line or your code editor (e.g. VS Code, Atom, etc.).
+Using git status you will see which file was modified by both developers and contains a conflict.
+
+Navigating to this file you will be able to see three markers:
+
+1. <<<<<<< CURRENT BRANCH       <- indicates the modifications from the current branch
+2. =======                      <- divides the modifications of the current branch from the other branch
+3. >>>>>>> INCOMING-BRANCH-NAME <- indicates the modifications from the incoming branch. 
+
+To resolve the conflict, you can either choose to keep the changes from the current branch, and remove modifications from the incoming branch, or keep modfications from both branches or only keep modifications from incoming branch.
+Delete the conflict markers (e.g. <<<<<<<, =======, >>>>>>>) and choose the final modifications you want to keep (solving the conflict).
+
+After having resolved the conflict you have to stage your changes using: git add modified-conflicted-file
+In this case, modified-conflicted-file represents the file that had a conflict and in which you resolved it by keeping the version you want.
+
+Finally you have to commit your changes using git commit -m "relevant message saying how you resolved the conflict"

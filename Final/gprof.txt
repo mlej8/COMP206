@@ -1,0 +1,30 @@
+Assuming there is a mistake in cumulative seconds, the table I used is the following: 
+
+  %     cumulative      self        calls           self            total           name
+ time    seconds       seconds                    (ms/call)        (ms/call)        
+28.57      2              2           1             2000             9000           main
+28.57      4              2           5             400              500            foo
+28.57      6              2           1             2000             4000           goo
+14.29      7              1           1             1000             1000           moo
+
+
+(a) Why does the function main() run for such a long time?
+    The main function only runs once and we can see that the time taken for the function alone is (2000 ms/call * 1 call) = 2000 ms. 
+    In other words, the time spent in main() is only 2000 ms and 7000 ms are spent in children calls. 
+    Therefore, main only accounts for approximately 1/5 or 22.22% of the total time (9000 ms/call).   
+    Therefore, it is possible to conclude that the main function runs for a long time, because a large amount of time is spent in the children functions.
+(b) Which function is making this program slow? (give the name)
+    goo
+(c) Justify why you gave your answer in (b).
+    Comparing the "self (ms/call)" time for main and goo, they take the same amount of time which is 2000 ms/call. 
+This is the maximum time spent inside a function that is not main.
+In other words, goo spends the most time inside its own function amongst foo, goo and moo which are children functions of main.  
+    It is obvious from the graph that between all three functions (foo, goo, moo), goo is the one that takes the most time with 2000 ms/call spent inside the body of goo compared to 400 ms/call for foo and 1000 ms/call for moo.
+    In addition, goo also makes children call which take 2000 ms/call for a total of 4000 ms/call. 
+    This means that each time goo is called it takes 4000 ms/call in total for goo to return which is the greatest total time among all three functions
+For instance, foo is called 5 times for a total of 2500 ms/call and moo is called once for a total of 1000 ms/call which are both less than goo (4000 ms/call) in terms of total time.
+    goo and foo both take 28.57% of the total execution time. 
+    However, foo is called 5 times with each execution taking 400 ms/call for 500 ms/call in total (100 ms/call for children calls of foo).
+    In total, foo would spend 500 ms/call for children calls compared to 2000 ms/call for children calls in the case of goo. 
+    In addition, each goo call takes 2000 ms/call whereas each foo call takes 400 ms/call.
+    Therefore, goo takes the most time, because it is only called once but takes 28.57% of the execution time which makes it the slowest function. In fact, amongst foo moo, and goo, goo takes the most time for children calls (2000 ms/call) and it is the one that takes the most time alone, e.g. for the execution of the function body itself (2000 ms/call) for a total of 4000 ms/call. This is also the greatest total time spent inside a function. We can confirm that goo is the slowest function.
